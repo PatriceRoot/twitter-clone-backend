@@ -1,11 +1,11 @@
-const data = [
-  (currenuser = {
+const data = {
+  "current-user": {
     name: "Bradley Ortiz",
     userName: "bradley_",
     time: "now",
     src: "/profile.png",
-  }),
-  (tweets = [
+  },
+  tweets: [
     {
       id: "00",
       tweet_avatar: "/ProfilePhoto2.png",
@@ -145,7 +145,6 @@ const data = [
         tweet_text: "Okay",
       },
     },
-  ]),
-];
-
+  ],
+};
 export default data;

@@ -1,4 +1,4 @@
-import data from "../data/data.js";
+import data from "../data.js";
 
 export function getAllTweets(req, res) {
   try {
@@ -7,3 +7,5 @@ export function getAllTweets(req, res) {
     res.status(500).json({ message: "Error getting articles" });
   }
 }
+
+export function get(params) {}
