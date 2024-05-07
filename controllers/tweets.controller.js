@@ -8,4 +8,13 @@ export function getAllTweets(req, res) {
   }
 }
 
-export function get(params) {}
+export function getOneTweet(req, res) {
+  const id = req.params.id;
+  try {
+    const tweet = data.find((tweet) => tweet.id == id);
+    res.status(200).json(tweet);
+    if (!tweet) throw new Error("Tweet not found");
+  } catch (error) {
+    res.status(500).json({ message: "Error getting tweet" });
+  }
+}
