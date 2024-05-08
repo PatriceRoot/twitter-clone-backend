@@ -2,19 +2,19 @@ import data from "../data.js";
 
 export function getAllTweets(req, res) {
   try {
-    res.status(200).json(data);
+    res.status(200).json(data.tweets);
   } catch (error) {
     res.status(500).json({ message: "Error getting articles" });
   }
 }
 
-export function getOneTweet(req, res) {
-  const id = req.params.id;
+export const postAllTweets = (req, res, next) => {
   try {
-    const tweet = data.find((tweet) => tweet.id == id);
-    res.status(200).json(tweet);
-    if (!tweet) throw new Error("Tweet not found");
+    let id = Math.round(Math.random() * 100000).toString();
+    console.log(req.body);
+    data.tweets.push({ id, ...req.body });
+    res.json({ id, ...req.body });
   } catch (error) {
-    res.status(500).json({ message: "Error getting tweet" });
+    res.status(404).send({ message: "Failed to add new tweet" });
   }
-}
+};
