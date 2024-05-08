@@ -9,6 +9,7 @@ dotenv.config();
 
 const { PORT } = process.env;
 app.use(cors());
+app.use(express.json());
 
 app.use("/tweets", tweetsRoute);
 app.use("/user", userRoute);

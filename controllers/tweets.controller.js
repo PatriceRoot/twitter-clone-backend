@@ -8,10 +8,10 @@ export function getAllTweets(req, res) {
   }
 }
 
-export const postAllTweets = (req, res, next) => {
+export const postAllTweets = (req, res) => {
   try {
     let id = Math.round(Math.random() * 100000).toString();
-    console.log(req.body);
+    console.log(req);
     data.tweets.push({ id, ...req.body });
     res.json({ id, ...req.body });
   } catch (error) {
